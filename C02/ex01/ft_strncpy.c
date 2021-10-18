@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 14:20:38 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/17 22:35:11 by seuyoo           ###   ########.fr       */
+/*   Created: 2021/10/15 00:07:31 by seuyoo            #+#    #+#             */
+/*   Updated: 2021/10/17 01:33:45 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_div_mod(int *a, int *b)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int temp;
+	unsigned int	i;
 
-	temp = *a;
-	*a = *a / *b;
-	*b = temp % *b;
+	i = 0;
+	while (i < n && src[i] = '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return	dest;
 }

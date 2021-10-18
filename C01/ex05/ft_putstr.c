@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 14:20:38 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/17 22:35:11 by seuyoo           ###   ########.fr       */
+/*   Created: 2021/10/14 09:58:35 by seuyoo            #+#    #+#             */
+/*   Updated: 2021/10/14 10:18:19 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_div_mod(int *a, int *b)
-{
-	int temp;
+#include <unistd.h>
 
-	temp = *a;
-	*a = *a / *b;
-	*b = temp % *b;
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *str)
+{
+	int i;
+
+	i = 0;
+	while(str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
 }

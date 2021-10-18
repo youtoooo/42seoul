@@ -6,7 +6,7 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 10:17:41 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/13 10:29:29 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/15 01:34:59 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,21 @@ void	ft_putchar(char c)
 
 void	ft_print_comb2(void)
 {
-	int i;
-	int j;
+	int n1;
+	int n2;
 
-	i = -1;
-	while (i++ <= 98)
+	n1 = -1;
+	while (n1++ <= 98)
 	{
-		j = i;
-		while (j++ <= 98)
+		n2 = n1;
+		while (n2++ <= 98)
 		{
-			ft_putchar(i / 10 + '0');
-			ft_putchar(i % 10 + '0');
+			ft_putchar(n1 / 10 + '0');
+			ft_putchar(n1 % 10 + '0');
 			write(1, " ", 1);
-			ft_putchar(j / 10 + '0');
-			ft_putchar(j % 10 + '0');
-			if(i != 98)
+			ft_putchar(n2 / 10 + '0');
+			ft_putchar(n2 % 10 + '0');
+			if(n1 != 98)
 			{
 				write(1, ", ", 2);
 			}

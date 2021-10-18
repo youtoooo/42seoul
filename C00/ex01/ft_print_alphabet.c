@@ -6,9 +6,10 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 20:59:36 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/11 11:09:18 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/15 01:12:29 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
 
 void	ft_print_alphabet(void)
@@ -16,7 +17,7 @@ void	ft_print_alphabet(void)
 	char	c;
 
 	c = 'a';
-	while (c <= 'z' )
+	while (c <= 'z')
 	{
 		write(1, &c, 1);
 		c++;

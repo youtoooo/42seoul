@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 14:20:38 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/17 22:35:11 by seuyoo           ###   ########.fr       */
+/*   Created: 2021/10/17 01:35:27 by seuyoo            #+#    #+#             */
+/*   Updated: 2021/10/17 01:43:05 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_div_mod(int *a, int *b)
+int	ft_str_is_printable(char *str)
 {
-	int temp;
+	int	i;
 
-	temp = *a;
-	*a = *a / *b;
-	*b = temp % *b;
+	i = 0;
+	while (str[i])
+	{
+		if(str[i] >= 33 && str[i] <= 126)
+		{
+			i++;
+		}
+		else
+		{
+			return (0);
+		}
+	}
+	return (1);
 }

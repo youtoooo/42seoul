@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 14:20:38 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/17 22:35:11 by seuyoo           ###   ########.fr       */
+/*   Created: 2021/10/14 10:23:31 by seuyoo            #+#    #+#             */
+/*   Updated: 2021/10/14 10:53:34 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_div_mod(int *a, int *b)
+int	ft_strlen(char *str)
 {
-	int temp;
+	int num = 0;
 
-	temp = *a;
-	*a = *a / *b;
-	*b = temp % *b;
+	while(str[num])
+	{
+		num++;
+	}
+	return num;
 }

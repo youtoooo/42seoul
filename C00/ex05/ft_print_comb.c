@@ -6,37 +6,43 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 12:47:33 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/11 18:18:06 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/15 01:30:19 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
+void	ft_putchar(char n1, char n2, char n3)
+{
+	write(1, &n1, 1);
+	write(1, &n2, 1);
+	write(1, &n3, 1);
+}
+
 void	ft_print_comb(void)
 {
-	char	numArr[3];
-	char	separator[2];
+	char	n1;
+	char	n2;
+	char	n3;
 
-	numArr[0] = '0';
-	separator[0] = ',';
-	separator[1] = ' ';
-	while (numArr[0] <= '7')
+	n1 = '0';
+	while (n1 <= '7')
 	{
-		numArr[1] = numArr[0] + 1;
-		while (numArr[1] <= '8')
+		n2 = n1 + 1;
+		while (n2 <= '8')
 		{
-			numArr[2] = numArr[1] + 1;
-			while (numArr[2] <= '9')
+			n3 = n2 + 1;
+			while (n3 <= '9')
 			{
-				write(1, numArr, 3);
-				if (numArr[0] != '7' || numArr[1] != '8' || numArr[2] != '9')
+				ft_putchar(n1,n2,n3);
+				if (n1 != '7')
 				{
-					write(1, separator, 2);
+					write(1, ", ", 2);
 				}
-				numArr[2]++;
+				n3++;
 			}
-			numArr[1]++;
+			n2++;
 		}
-		numArr[0]++;
+		n1++;
 	}
 }

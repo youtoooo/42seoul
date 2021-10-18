@@ -6,7 +6,7 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 10:50:47 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/11 11:06:10 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/15 01:13:59 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_print_alphabet(void)
 	char	c;
 
 	c = 'z';
-	while (c >= 'a' )
+	while (c >= 'a')
 	{
 		write(1, &c, 1);
 		c--;

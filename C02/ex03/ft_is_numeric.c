@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_is_numeric.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 14:20:38 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/17 22:35:11 by seuyoo           ###   ########.fr       */
+/*   Created: 2021/10/17 01:04:43 by seuyoo            #+#    #+#             */
+/*   Updated: 2021/10/17 01:32:46 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_div_mod(int *a, int *b)
+int	ft_str_is_numeric(char *str)
 {
-	int temp;
+	int	i;
 
-	temp = *a;
-	*a = *a / *b;
-	*b = temp % *b;
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] >= '0' && str[i] <= '9')
+		{
+			i++;
+		}
+		else
+		{
+			return (0);
+		}
+	}
+	return(1);
 }

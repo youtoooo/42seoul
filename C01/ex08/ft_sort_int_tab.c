@@ -1,20 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 14:20:38 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/17 22:35:11 by seuyoo           ###   ########.fr       */
+/*   Created: 2021/10/17 02:57:50 by seuyoo            #+#    #+#             */
+/*   Updated: 2021/10/17 22:10:57 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_div_mod(int *a, int *b)
+void	swap(int *tab, int num)
 {
-	int temp;
+	int	temp;
 
-	temp = *a;
-	*a = *a / *b;
-	*b = temp % *b;
+	temp = tab[num];
+	tab[num] = tab[num + 1];
+	tab[num + 1] = temp;
+}
+
+void	ft_sort_int_tab(int *tab, int size)
+{
+	int	i;
+	int j;
+
+	i = 0;
+	while (i < size)
+	{
+		j = 0;
+		while(j < size - 1)
+		{
+			if (tab[j] > tab[j + 1])
+			{
+				swap(tab, j);
+			}
+			j++;
+		}
+		i++;
+	}
 }

@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 14:20:38 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/17 22:35:11 by seuyoo           ###   ########.fr       */
+/*   Created: 2021/10/14 22:26:31 by seuyoo            #+#    #+#             */
+/*   Updated: 2021/10/17 01:34:01 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_div_mod(int *a, int *b)
+char	*ft_strcpy(char	*dest, char	*src)
 {
-	int temp;
+	int	i;
 
-	temp = *a;
-	*a = *a / *b;
-	*b = temp % *b;
+	i = 0;
+	while (src[i])
+	{
+		dest[i]	=	src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return	dest;
 }
