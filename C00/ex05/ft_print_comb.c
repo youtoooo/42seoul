@@ -6,7 +6,7 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 12:47:33 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/15 01:30:19 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/18 18:25:58 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_print_comb(void)
 			n3 = n2 + 1;
 			while (n3 <= '9')
 			{
-				ft_putchar(n1,n2,n3);
+				ft_putchar (n1, n2, n3);
 				if (n1 != '7')
 				{
 					write(1, ", ", 2);

@@ -6,13 +6,13 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 10:50:47 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/15 01:13:59 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/18 21:35:52 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_alphabet(void)
+void	ft_print_reverse_alphabet(void)
 {
 	char	c;
 

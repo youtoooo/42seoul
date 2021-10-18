@@ -6,7 +6,7 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 15:52:25 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/13 19:51:03 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/18 18:31:46 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ void	ft_putchar(char c)
 
 void	ft_putnbr(int nb)
 {
-	if(nb < 0)
+	if (nb < 0)
 	{
-		if(nb == -2147483648)
+		if (nb == -2147483648)
 		{
 			write(1, "-2147483648", 11);
-			return;
+			return ;
 		}
 		ft_putchar('-');
 		ft_putnbr(-nb);
-		return;
+		return ;
 	}
-	else if(nb >= 10)
+	else if (nb >= 10)
 	{
 		ft_putnbr(nb / 10);
 	}
