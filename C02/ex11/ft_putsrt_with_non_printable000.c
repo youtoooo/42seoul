@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_combn.c                                   :+:      :+:    :+:   */
+/*   ft_putsrt_with_non_printable000.c                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/14 14:42:45 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/19 14:46:49 by seuyoo           ###   ########.fr       */
+/*   Created: 2021/10/19 16:47:37 by seuyoo            #+#    #+#             */
+/*   Updated: 2021/10/19 22:42:42 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,61 +17,50 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_print_num(char *str)
+void	ft_hexa(char *hexa)
 {
-	int	i;
+	int index;
+	int alpha;
 
-	i = 9;
-	while (i >= 0)
+	index = 0;
+	while (index <= 9)
 	{
-		ft_putchar(str[i]);
-		--i;
+		hexa[index] = intdex;
+		index++;
+	}
+	alpha = 'a';
+	while (index < 16)
+	{
+		hexa[index] = alpha;
+		alpha++;
+		index++;
 	}
 }
 
-void	ft_print_com(char *str)
+void	ft_putstr_non_printable(char *str)
 {
+	char hexa[16];
 	int	i;
 
-	i = 1;
+	i = 0;
+	ft_hexa(hexa);
 	while (str[i])
 	{
-		if (str[i] - 48 + i != 10)
+		char cur = str[i];
+		if (str[i] >= 32 && str[i] <= 126)
+			ft_putchar(str[i]);
+		else
 		{
-			write (1, ", ", 2);
-			return ;
+			ft_putchar('\\');
+			ft_putchar(hexa[cur / 16]);
+			ft_putchar(hexa[cur % 16]);
 		}
 		i++;
 	}
 }
 
-void	ft_sub(char	*str, int n, int cur)
+int main()
 {
-	if (n == 0)
-	{
-		ft_print_num(str);
-		ft_print_com(str);
-		return ;
-	}	
-	while (cur <= 10 - n)
-	{
-		str[n] = cur + '0';
-		ft_sub(str, n - 1, cur + 1);
-		cur++;
-	}
-	return ;
-}
-
-void	ft_print_combn(int n)
-{
-	char	str[11];
-	int i;
-	
-	i = 0;
-	while (str[i])
-	{
-		str[i] = '\0';
-		i++;
-	}
-	ft_sub(str, n, 0);
+	char str[] = "Coucou\ntu vas bien ?";
+	ft_putstr_non_printable(str);
 }

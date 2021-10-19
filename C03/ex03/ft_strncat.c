@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/14 12:42:24 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/19 10:52:15 by seuyoo           ###   ########.fr       */
+/*   Created: 2021/10/20 01:48:44 by seuyoo            #+#    #+#             */
+/*   Updated: 2021/10/20 02:12:57 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_ft(int *********nbr)
+char *ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int num = 42;
-	int *ptr = &num;
-	int **ptr2 = &ptr;
-	int ***ptr3 = &ptr2;
-	int ****ptr4 = &ptr3;
-	int *****ptr5 = &ptr4;
-	int ******ptr6 = &ptr5;
-	int *******ptr7 = &ptr6;
-	int ********ptr8 = &ptr7;
-	*********nbr = &ptr8;
+	int	i;
+	unsigned int	j;
+
+	i = 0;
+	j = 0;
+	while (dest[i])
+		i++;
+	while (j < nb)
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	return (dest);
 }
