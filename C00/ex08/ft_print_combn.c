@@ -6,7 +6,7 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 14:42:45 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/19 14:46:49 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/20 10:31:36 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ void	ft_sub(char	*str, int n, int cur)
 void	ft_print_combn(int n)
 {
 	char	str[11];
-	int i;
-	
+	int		i;
+
 	i = 0;
 	while (str[i])
 	{

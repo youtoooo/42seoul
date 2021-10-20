@@ -6,17 +6,18 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 10:23:31 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/14 10:53:34 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/20 10:36:18 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {
-	int num = 0;
+	int	num;
 
-	while(str[num])
+	num = 0;
+	while (str[num])
 	{
 		num++;
 	}
-	return num;
+	return (num);
 }

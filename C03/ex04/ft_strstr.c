@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_numeric.c                                    :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/17 01:04:43 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/20 10:42:55 by seuyoo           ###   ########.fr       */
+/*   Created: 2021/10/20 11:06:05 by seuyoo            #+#    #+#             */
+/*   Updated: 2021/10/20 12:03:07 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_numeric(char *str)
+char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
+	int	j;
 
 	i = 0;
+	j = 0;
 	while (str[i])
 	{
-		if (str[i] >= '0' && str[i] <= '9')
+		if (str[i] == to_find[j])
 		{
-			i++;
-		}
-		else
-		{
-			return (0);
-		}
-	}
-	return (1);
-}
+			k = i;
+			j = 0;
+			while (to_find[j])
+			{
+				if (str[k] == to_find[j])
+				{

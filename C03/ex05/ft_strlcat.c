@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_numeric.c                                    :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/17 01:04:43 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/20 10:42:55 by seuyoo           ###   ########.fr       */
+/*   Created: 2021/10/20 12:03:31 by seuyoo            #+#    #+#             */
+/*   Updated: 2021/10/20 12:30:03 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_numeric(char *str)
+#include <stdio.h>
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int	i;
+	int				dlen;
+	unsigned int	slen;
 
-	i = 0;
-	while (str[i])
+	dlen = 0;
+	slen = 0;
+	while (dest[dlen])
+		dlen++;
+	while (src[slen])
 	{
-		if (str[i] >= '0' && str[i] <= '9')
+		if (slen < size -1)
 		{
-			i++;
+			dest[dlen] = src[slen];
+			dlen++;
 		}
-		else
-		{
-			return (0);
-		}
+		slen++;
 	}
-	return (1);
+	dest[i] = '\0';
 }

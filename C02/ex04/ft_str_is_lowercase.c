@@ -6,13 +6,13 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 01:21:32 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/17 01:29:18 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/20 10:43:09 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_str_is_lowercase(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])

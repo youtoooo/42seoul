@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_numeric.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/17 01:04:43 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/20 10:42:55 by seuyoo           ###   ########.fr       */
+/*   Created: 2021/10/20 19:24:31 by seuyoo            #+#    #+#             */
+/*   Updated: 2021/10/20 19:43:53 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_numeric(char *str)
-{
-	int	i;
+#include <unistd.h>
 
-	i = 0;
-	while (str[i])
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putnbr(int nb)
+{
+	if (nb < 0)
 	{
-		if (str[i] >= '0' && str[i] <= '9')
+		if (nb == -2147483648)
 		{
-			i++;
+			write(1, "-2147483648", 11);
+			return ;
 		}
 		else
 		{
-			return (0);
+			ft_putchar('-');
+			ft_putnbr(-nb);
+			return ;
 		}
 	}
-	return (1);
+	if (nb >= 10)
+		ft_putnbr(nb / 10);
+	ft_putchar(nb % 10 + '0');
 }

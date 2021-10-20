@@ -6,7 +6,7 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 11:35:01 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/17 01:33:20 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/20 10:42:37 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ int	ft_str_is_alpha(char *str)
 			return (0);
 		}
 	}
-	return(1);
+	return (1);
 }

@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_numeric.c                                    :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/17 01:04:43 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/20 10:42:55 by seuyoo           ###   ########.fr       */
+/*   Created: 2021/10/20 19:07:56 by seuyoo            #+#    #+#             */
+/*   Updated: 2021/10/20 19:19:00 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_numeric(char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] >= '0' && str[i] <= '9')
-		{
-			i++;
-		}
-		else
-		{
-			return (0);
-		}
+		if (str[i] == '\0')
+			return (i);
+		i++;
 	}
-	return (1);
+	return (i);
 }

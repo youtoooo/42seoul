@@ -6,7 +6,7 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 22:26:31 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/17 01:34:01 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/20 10:41:31 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ char	*ft_strcpy(char	*dest, char	*src)
 	i = 0;
 	while (src[i])
 	{
-		dest[i]	=	src[i];
+		dest[i] = src[i];
 		i++;
 	}
 	dest[i] = '\0';
-	return	dest;
+	return (dest);
 }
