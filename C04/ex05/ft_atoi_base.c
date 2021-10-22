@@ -1,30 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 23:47:40 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/21 11:29:57 by seuyoo           ###   ########.fr       */
+/*   Created: 2021/10/23 01:33:06 by seuyoo            #+#    #+#             */
+/*   Updated: 2021/10/23 02:19:54 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
+int	ft_atoi_base(char *str, char *base)
 {
-	int	i;
-	int	j;
 
-	j = 0;
-	i = 0;
-	while (dest[i])
-		i++;
-	while (src[j])
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}

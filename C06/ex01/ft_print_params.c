@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 23:47:40 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/21 11:29:57 by seuyoo           ###   ########.fr       */
+/*   Created: 2021/10/21 22:54:05 by seuyoo            #+#    #+#             */
+/*   Updated: 2021/10/21 23:30:47 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+int	main(int argc, char **argv)
 {
 	int	i;
 	int	j;
 
-	j = 0;
-	i = 0;
-	while (dest[i])
-		i++;
-	while (src[j])
+	i = 1;
+	while (i < argc)
 	{
-		dest[i] = src[j];
+		j = 0;
+		while (argv[i][j])
+		{
+			ft_putchar(argv[i][j]);
+			j++;
+		}
+		ft_putchar('\n');
 		i++;
-		j++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (0);
 }

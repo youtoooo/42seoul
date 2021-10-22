@@ -6,7 +6,7 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 16:47:37 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/20 10:51:40 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/21 15:56:35 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ void	ft_putstr_non_printable(char *str)
 		else
 		{
 			ft_putchar('\\');
-			ft_putchar(hexa[cur / 16]);
-			ft_putchar(hexa[cur % 16]);
+			ft_putchar(*(hexa + cur / 16));
+			ft_putchar(*(hexa + cur % 16));
 		}
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 23:15:02 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/20 10:52:35 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/21 11:34:54 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@ int	ft_strcmp(char *s1, char *s2)
 	int	i;
 
 	i = 0;
-	while (s1[i])
+	while (s1[i] || s2[i])
 	{
 		if (s1[i] < s2[i])
-			return (-1);
+			return (s1[i] - s2[i]);
 		else if (s1[i] > s2[i])
-			return (1);
+			return (s1[i] - s2[i]);
 		i++;
 	}
 	return (0);

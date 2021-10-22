@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 23:47:40 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/21 11:29:57 by seuyoo           ###   ########.fr       */
+/*   Created: 2021/10/21 16:08:21 by seuyoo            #+#    #+#             */
+/*   Updated: 2021/10/22 19:59:50 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
+int	ft_atoi(char *str)
 {
 	int	i;
-	int	j;
+	int sign;
+	int num;
 
-	j = 0;
+	num = 0;
+	sign = 1;
 	i = 0;
-	while (dest[i])
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
-	while (src[j])
+	while (str[i] == '-' || str[i] == '+')
 	{
-		dest[i] = src[j];
+		if (str[i] == '-')
+			sign *= -1;
 		i++;
-		j++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		num = str[i] - '0';
+		num = (num * 10) + (str[i] - '0');
+		i++;
+	}
+	return (sign * num);
 }

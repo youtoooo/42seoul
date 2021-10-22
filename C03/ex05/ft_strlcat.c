@@ -6,28 +6,39 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 12:03:31 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/20 12:30:03 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/21 13:23:26 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+int	ft_length(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int				dlen;
+	unsigned int	len;
 	unsigned int	slen;
+	unsigned int 	dlen;
 
-	dlen = 0;
+	slen = ft_length(src);
+	dlen = ft_length(dest);
+	if (dlen > size)
+		return (slen);
 	slen = 0;
-	while (dest[dlen])
-		dlen++;
-	while (src[slen])
+	len = dlen;
+	while (src[slen] && dlen < size - 1)
 	{
-		if (slen < size -1)
-		{
-			dest[dlen] = src[slen];
-			dlen++;
-		}
+		dest[dlen] = src[slen];
+		dlen++;
 		slen++;
 	}
-	dest[i] = '\0';
+	dest[dlen] = '\0';
+	slen = ft_length(src);
+	return (len + slen);
 }

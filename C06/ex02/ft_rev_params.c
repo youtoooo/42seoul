@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 23:47:40 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/21 11:29:57 by seuyoo           ###   ########.fr       */
+/*   Created: 2021/10/21 23:24:05 by seuyoo            #+#    #+#             */
+/*   Updated: 2021/10/22 00:15:08 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
-{
-	int	i;
-	int	j;
+#include <unistd.h>
 
-	j = 0;
-	i = 0;
-	while (dest[i])
-		i++;
-	while (src[j])
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+int	main(int argc, char **argv)
+{
+	int i;
+
+	while (1 < argc)
 	{
-		dest[i] = src[j];
-		i++;
-		j++;
+		i = 0;
+		while (argv[argc - 1][i])
+		{
+			ft_putchar(argv[argc - 1][i]);
+			i++;
+		}
+		ft_putchar('\n');
+		argc--;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (0);
 }
