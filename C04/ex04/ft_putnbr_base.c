@@ -6,7 +6,7 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 21:26:50 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/23 01:32:31 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/23 20:35:24 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_putchar(char c)
 int	ft_size(char *base)
 {
 	int	size;
-	int check;
+	int	check;
 
 	size = 0;
 	check = 0;
@@ -44,7 +44,7 @@ int	ft_size(char *base)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int size;
+	int	size;
 
 	size = ft_size(base);
 	if (size == 0)

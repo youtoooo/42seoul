@@ -6,7 +6,7 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 23:24:05 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/22 00:15:08 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/23 20:42:33 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putchar(char c)
 
 int	main(int argc, char **argv)
 {
-	int i;
+	int	i;
 
 	while (1 < argc)
 	{

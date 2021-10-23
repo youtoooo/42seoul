@@ -6,15 +6,15 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 16:08:21 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/22 19:59:50 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/23 20:34:43 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(char *str)
 {
 	int	i;
-	int sign;
-	int num;
+	int	sign;
+	int	num;
 
 	num = 0;
 	sign = 1;

@@ -1,41 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putsrt_with_non_printable.c                     :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 16:47:37 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/23 21:14:01 by seuyoo           ###   ########.fr       */
+/*   Created: 2021/10/23 13:56:01 by seuyoo            #+#    #+#             */
+/*   Updated: 2021/10/23 14:03:07 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int	ft_recursive_factorial(int nb)
 {
-	write(1, &c, 1);
-}
-
-void	ft_putstr_non_printable(char *str)
-{
-	char	*hexa;
-	char	cur;
-	int		i;
-
-	i = 0;
-	hexa = "0123456789abcdef";
-	while (str[i])
-	{
-		cur = str[i];
-		if (str[i] >= 32 && str[i] <= 126)
-			ft_putchar(str[i]);
-		else
-		{
-			ft_putchar('\\');
-			ft_putchar(*(hexa + cur / 16));
-			ft_putchar(*(hexa + cur % 16));
-		}
-		i++;
-	}
+	if (nb <= '0' && nb >= '9')
+		return (0);
+	if (nb == 0)
+		return (1);
+	return (nb * ft_recursive_factorial(nb - 1));
 }

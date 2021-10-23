@@ -6,7 +6,7 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 12:03:31 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/21 13:23:26 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/23 20:33:37 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	len;
 	unsigned int	slen;
-	unsigned int 	dlen;
+	unsigned int	dlen;
 
 	slen = ft_length(src);
 	dlen = ft_length(dest);

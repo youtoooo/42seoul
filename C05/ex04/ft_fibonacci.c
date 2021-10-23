@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putsrt_with_non_printable.c                     :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 16:47:37 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/23 21:14:01 by seuyoo           ###   ########.fr       */
+/*   Created: 2021/10/23 14:28:32 by seuyoo            #+#    #+#             */
+/*   Updated: 2021/10/23 15:14:12 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+void	ft_plus(int *num, int index)
 {
-	write(1, &c, 1);
+	if (index == 2)
+		return ;
+	num[0] = num[1];
+	num[1] = num[2];
+	num[2] = num[0] + num[1];
+	ft_plus(num, index - 1);
 }
 
-void	ft_putstr_non_printable(char *str)
+int	ft_fibonacci(int index)
 {
-	char	*hexa;
-	char	cur;
-	int		i;
+	int	num[3];
 
-	i = 0;
-	hexa = "0123456789abcdef";
-	while (str[i])
-	{
-		cur = str[i];
-		if (str[i] >= 32 && str[i] <= 126)
-			ft_putchar(str[i]);
-		else
-		{
-			ft_putchar('\\');
-			ft_putchar(*(hexa + cur / 16));
-			ft_putchar(*(hexa + cur % 16));
-		}
-		i++;
-	}
+	num[0] = 0;
+	num[1] = 1;
+	num[2] = 1;
+	if (index < 0)
+		return (-1);
+	if (index > 3)
+		ft_plus(num, index - 1);
+	else
+		return (num[index - 1]);
+	return (num[2]);
 }

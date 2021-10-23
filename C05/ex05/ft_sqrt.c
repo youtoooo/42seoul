@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putsrt_with_non_printable.c                     :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 16:47:37 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/23 21:14:01 by seuyoo           ###   ########.fr       */
+/*   Created: 2021/10/23 15:12:40 by seuyoo            #+#    #+#             */
+/*   Updated: 2021/10/23 19:26:27 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int	ft_sqrt(int nb)
 {
-	write(1, &c, 1);
-}
+	int	i;
+	int	div;
+	int	rem;
 
-void	ft_putstr_non_printable(char *str)
-{
-	char	*hexa;
-	char	cur;
-	int		i;
-
-	i = 0;
-	hexa = "0123456789abcdef";
-	while (str[i])
+	i = 1;
+	if (nb == 1)
+		return (1);
+	while (i < nb)
 	{
-		cur = str[i];
-		if (str[i] >= 32 && str[i] <= 126)
-			ft_putchar(str[i]);
-		else
-		{
-			ft_putchar('\\');
-			ft_putchar(*(hexa + cur / 16));
-			ft_putchar(*(hexa + cur % 16));
-		}
+		div = nb / i;
+		rem = nb % i;
+		if (i == div && rem == 0)
+			return (i);
 		i++;
 	}
+	return (0);
 }

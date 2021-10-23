@@ -6,14 +6,14 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 11:06:05 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/21 15:13:52 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/23 20:32:59 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_find(char *str, char *to_find, int i)
 {
-	int index;
-	
+	int	index;
+
 	index = 0;
 	while (str[i] == to_find[index])
 	{
@@ -27,8 +27,8 @@ int	ft_find(char *str, char *to_find, int i)
 
 char	*ft_strstr(char *str, char *to_find)
 {
-	int i;
-	int ok;
+	int	i;
+	int	ok;
 
 	i = 0;
 	if (to_find[0] == '\0')
