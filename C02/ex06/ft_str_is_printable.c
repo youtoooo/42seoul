@@ -6,7 +6,7 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 01:35:27 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/20 10:43:26 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/25 18:26:59 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,10 @@ int	ft_str_is_printable(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] >= 33 && str[i] <= 126)
-		{
+		if (str[i] >= 32 && str[i] <= 126)
 			i++;
-		}
 		else
-		{
 			return (0);
-		}
 	}
 	return (1);
 }

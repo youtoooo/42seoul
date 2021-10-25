@@ -6,13 +6,13 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 16:47:37 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/21 15:56:35 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/25 18:44:00 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_putstr_with_non_printable(char c)
 {
 	write(1, &c, 1);
 }

@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_params.c                                   :+:      :+:    :+:   */
+/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/22 00:19:42 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/23 20:42:24 by seuyoo           ###   ########.fr       */
+/*   Created: 2021/10/25 18:44:22 by seuyoo            #+#    #+#             */
+/*   Updated: 2021/10/25 19:10:36 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	main(int argc, char **argv)
+void	ft_putchar(char c)
 {
-	int		i;
-	int		j;
-	char	temp;
+	write(1, &c, 1);
+}
 
-	i = 1;
-	while (i < argc)
-	{	
-		j = 0;
-		while (argv[i][j])
+void	ft_putstr_non_printable(char *str)
+{
+	char			*hexa;
+	unsigned char	cur;
+	int				i;
+
+	i = 0;
+	hexa = "0123456789abcdef";
+	while (str[i])
+	{
+		cur = str[i];
+		if (str[i] >= 32 && str[i] <= 126)
+			ft_putchar(str[i]);
+		else
 		{
-			if (argv[i][j] > argv[i][j + 1])
-			{
-				temp = argv[i][j];
-				argv[i][j] = argv[i][j + 1];
-				argv[i][j + 1] = temp;
-			}
-			j++;
+			ft_putchar('\\');
+			ft_putchar(*(hexa + cur / 16));
+			ft_putchar(*(hexa + cur % 16));
 		}
 		i++;
 	}
-	return (0);
 }
