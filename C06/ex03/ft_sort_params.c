@@ -6,42 +6,61 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 00:19:42 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/25 16:59:06 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/26 14:56:15 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_putstr(char *argv)
 {
-	write(1, &c, 1);
+	int	i;
+	
+	i = 0;
+	while (argv[i])
+	{	
+		write(1, &argv[i], 1);
+		i++;
+	}
+	write(1, "\n", 1);
 }
 
-void	ft_swap(char **argv, int i)
+int	ft_strcmp(char *s1, char *s2)
 {
-	char *temp;
+	int	i;
 
-	temp = argv[i];
-	argv[i] = argv[i + 1];
-	argv[i + 1] = temp;
+	i = 0;
+	while (s1[i] || s2[i])
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return (0);
 }
 
 int	main(int argc, char **argv)
 {
 	int		i;
 	int		j;
+	char	*temp;
 
-	i = 1;
-	while (i < argc)
+	i = 0;
+	while (++i < argc - 1)
 	{	
 		j = 0;
-		while (argv[i][j])
+		while (++j < argc - 1)
 		{
-			if (argv[i][j] > argv[i + 1][j])
-				ft_swap(argv, i);
-			j++;
+			if (ft_strcmp(argv[j], argv[j + 1]) > 0)
+			{
+				temp = argv[j];
+				argv[j] = argv[j + 1];
+				argv[j + 1] = temp;
+			}
 		}
-		i++;
 	}
+	i = 0;
+	while (argv[++i])
+		ft_putstr(argv[i]);
 	return (0);
 }

@@ -6,11 +6,10 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 01:33:06 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/25 20:00:43 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/26 16:55:05 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
 int	ft_basecheck(char *base)
 {
 	int size;
@@ -37,51 +36,56 @@ int	ft_basecheck(char *base)
 	return (size);
 }
 
-int	ft_sign(char *str, int *i)
+int	ft_sign(char *str, int *index)
 {
+	int i;
 	int	sign;
 
+	i = 0;
 	sign = 1;
-	while (str[*i] == 32 || (str[*i] >= 9 && str[*i] <= 13))
-		i += 1;
-	while (str[*i] == '-' || str[*i] == '+')
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	while (str[i] == '-' || str[i] == '+' || str[i] == ' ')
 	{
-		if (str[*i] == '-')
+		if (str[i] == '-')
 			sign *= -1;
-		i += 1;
+		i++;
 	}
+	*index = i;
 	return (sign);
 }
 
-/*int	ft_numer(char *str, char *base)
+int	ft_strstr(char *str,char *base, int i)
 {
-	int	i;
-	
-	i = 0;
-	while (str[i])
-	{
-		while (base[j])
-		{
+	int	index;
 
-		if (str[i] == base[0])
-}*/
-void	ft_atoi_base(char *str, char *base)
+	index = 0;
+	while (base[index])
+	{
+		if (str[i] == base[index])
+			return (1);
+		index++;
+	}
+	return (0);
+}
+
+int	ft_atoi_base(char *str, char *base)
 {
 	int	size;
 	int sign;
 	int index;
+	int result;
 
-	sign = ft_sign(str,&index);
+	result = 0;
+	sign = ft_sign(str, &index);
 	size = ft_basecheck(base);
 	if (size == 0)
-		return ;
-	printf("%d\n%d\n%d\n", sign, size, index);
+		return (0);
+	while (ft_strstr(str, base, index))
+	{
+		result *= size;
+		result += str[index] - '0';
+		index++;
+	}
+	return (result * sign);
 }
-
-int main()
-{
-	char str[] = "  --++-1234";
-	char base[] = "012345";
-	ft_atoi_base(str, base);
-}
-

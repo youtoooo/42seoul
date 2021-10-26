@@ -6,7 +6,7 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 13:10:57 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/25 19:50:05 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/26 03:10:25 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int	ft_iterative_factorial(int nb)
 	int	n;
 
 	n = nb;
-	if (nb <= '0' && nb >= '9')
+	if (nb < 0)
 		return (0);
 	while (1 < nb)
 	{

@@ -6,7 +6,7 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 14:42:45 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/20 10:31:36 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/26 02:51:06 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,9 @@ void	ft_print_combn(int n)
 		i++;
 	}
 	ft_sub(str, n, 0);
+}
+
+int main()
+{
+	ft_print_combn(2);
 }

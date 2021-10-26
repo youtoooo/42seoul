@@ -6,24 +6,24 @@
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 19:12:29 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/25 19:54:18 by seuyoo           ###   ########.fr       */
+/*   Updated: 2021/10/26 11:31:02 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_is_prime(int nb)
 {
 	int	i;
-	int	div;
 
-	i = 2;
-	if (nb == 1)
+	i = 3;
+	if (nb <= 1)
 		return (0);
-	while (i < nb)
+	if (nb % 2 == 0)
+		return (0);
+	while (i < nb / 2)
 	{
-		div = nb % i;
-		if (div == 0)
+		if (nb % i == 0)
 			return (0);
-		i++;
+		i += 2;
 	}
 	return (1);
 }

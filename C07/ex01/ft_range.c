@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seuyoo <seuyoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/23 19:49:59 by seuyoo            #+#    #+#             */
-/*   Updated: 2021/10/26 12:47:03 by seuyoo           ###   ########.fr       */
+/*   Created: 2021/10/26 16:59:38 by seuyoo            #+#    #+#             */
+/*   Updated: 2021/10/26 21:17:32 by seuyoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_prime(int nb)
+int	*ft_range(int min, int max)
 {
+	int	*range;
 	int	i;
+	int mini;
 
-	i = 3;
-	if (nb <= 1)
-		return (1);
-	if (nb % 2 == 0)
-		return (1);
-	while (i < nb / 2)
+	mini = min;
+	i = 0;
+	if (min >= max)
 	{
-		if (nb % i == 0)
-			return (1);
-		i += 2;
+		range = '\0';
+		return (range);
 	}
-	return (0);
-}
-
-int ft_find_next_prime(int nb)
-{
-	int	prime;
-
-	prime = ft_is_prime(nb);
-	if (prime == 0)
-		return (nb);
-	while (ft_is_prime(nb))
-		nb++;
-	return (nb);
+	range = (int*)malloc(sizeof(int) * (max - min) + 1);
+	if (range == 0)
+		return (0);
+	while (i < max - min)
+	{
+		range[i] = mini;
+		mini++;
+		i++;
+	}
+	range[i] = '\0';
+	return (range);
 }
